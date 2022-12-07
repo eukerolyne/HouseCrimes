@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+<div id="login">
+
+    <form class="card">
+
+        <div class="card-header">
+
+            <h2>Login</h2>
+
+        </div>
+
+        <div class="card-content">
+
+            <div class="card-content-area">
+
+                <label for="usuario">Usuário</label>
+
+                <input type="text" id="usuario" autocomplete="off">
+
+            </div>
+
+            <div class="card-content-area">
+
+                <label for="password">Senha</label>
+
+                <input type="password" id="password" autocomplete="off">
+
+            </div>
+
+        </div>
+
+        <div class="card-footer">
+
+            <button type="button"
+                    class="btn" @*border border-secondary*@
+                    onclick="location.href='@Url.Action("Index", "Filmes")'">
+                <b>Entrar</b>
+            </button>
+
+            <a class="nav" asp-area="" asp-controller="Usuarios" asp-action="Create"><b>É novo aqui? Se cadastre!</b></a>
+
+        </div>
+
+    </form>
+
+</div>

@@ -1,0 +1,66 @@
+﻿@model HouseCrimes.Models.Usuario
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Usuario</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.usuarioNome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.usuarioNome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.usuarioSobrenome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.usuarioSobrenome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.usuarioDtnascimento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.usuarioDtnascimento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.usuarioTelefone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.usuarioTelefone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.usuarioEmail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.usuarioEmail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.usuarioNickname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.usuarioNickname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.usuarioPassword)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.usuarioPassword)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.usuarioTipo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.usuarioTipo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.usuarioId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
