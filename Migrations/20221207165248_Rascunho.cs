@@ -5,7 +5,7 @@
 namespace HouseCrimes.Migrations
 {
     /// <inheritdoc />
-    public partial class rascunho : Migration
+    public partial class Rascunho : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

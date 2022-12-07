@@ -9,106 +9,69 @@
 <h4>Usuario</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="usuarioNome" class="control-label"></label>
-                <input asp-for="usuarioNome" class="form-control" />
-                <span asp-validation-for="usuarioNome" class="text-danger"></span>
+    <form asp-action="Create">
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Nome">
             </div>
-            <div class="form-group">
-                <label asp-for="usuarioSobrenome" class="control-label"></label>
-                <input asp-for="usuarioSobrenome" class="form-control" />
-                <span asp-validation-for="usuarioSobrenome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="usuarioDtnascimento" class="control-label"></label>
-                <input asp-for="usuarioDtnascimento" class="form-control" />
-                <span asp-validation-for="usuarioDtnascimento" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="usuarioTelefone" class="control-label"></label>
-                <input asp-for="usuarioTelefone" class="form-control" />
-                <span asp-validation-for="usuarioTelefone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="usuarioEmail" class="control-label"></label>
-                <input asp-for="usuarioEmail" class="form-control" />
-                <span asp-validation-for="usuarioEmail" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="usuarioNickname" class="control-label"></label>
-                <input asp-for="usuarioNickname" class="form-control" />
-                <span asp-validation-for="usuarioNickname" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="usuarioPassword" class="control-label"></label>
-                <input asp-for="usuarioPassword" class="form-control" />
-                <span asp-validation-for="usuarioPassword" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="usuarioTipo" class="control-label"></label>
-                <input asp-for="usuarioTipo" class="form-control" />
-                <span asp-validation-for="usuarioTipo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-<div>
-    <form>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Senha</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Senha">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Sobrenome">
             </div>
         </div>
-        <div class="form-group">
-            <label for="inputAddress">Endereço</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Rua dos Bobos, nº 0">
-        </div>
-        <div class="form-group">
-            <label for="inputAddress2">Endereço 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, hotel, casa, etc.">
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputCity">Cidade</label>
-                <input type="text" class="form-control" id="inputCity">
-            </div>
-            <div class="form-group col-md-4">
-                <label for="inputEstado">Estado</label>
-                <select id="inputEstado" class="form-control">
-                    <option selected>Escolher...</option>
-                    <option>...</option>
-                </select>
-            </div>
-            <div class="form-group col-md-2">
-                <label for="inputCEP">CEP</label>
-                <input type="text" class="form-control" id="inputCEP">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                    Clique em mim
-                </label>
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Entrar</button>
     </form>
+</div>
+<div>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="usuarioSobrenome" class="control-label"></label>
+                    <input asp-for="usuarioSobrenome" class="form-control" />
+                    <span asp-validation-for="usuarioSobrenome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="usuarioDtnascimento" class="control-label"></label>
+                    <input asp-for="usuarioDtnascimento" class="form-control" />
+                    <span asp-validation-for="usuarioDtnascimento" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="usuarioTelefone" class="control-label"></label>
+                    <input asp-for="usuarioTelefone" class="form-control" />
+                    <span asp-validation-for="usuarioTelefone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="usuarioEmail" class="control-label"></label>
+                    <input asp-for="usuarioEmail" class="form-control" />
+                    <span asp-validation-for="usuarioEmail" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="usuarioNickname" class="control-label"></label>
+                    <input asp-for="usuarioNickname" class="form-control" />
+                    <span asp-validation-for="usuarioNickname" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="usuarioPassword" class="control-label"></label>
+                    <input asp-for="usuarioPassword" class="form-control" />
+                    <span asp-validation-for="usuarioPassword" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="usuarioTipo" class="control-label"></label>
+                    <input asp-for="usuarioTipo" class="form-control" />
+                    <span asp-validation-for="usuarioTipo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
