@@ -1,77 +1,76 @@
 ﻿@model HouseCrimes.Models.Usuario
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Novo Usuário";
 }
 
-<h1>Create</h1>
+<h1 style="text-align:center">Bem-vindo</h1>
+@*--------Botão de Voltar--------*@
+<div class="col-md-6">
+    <button type="button" class="btn border border-secondary" style="background-color: #CC0000; color: white;" onclick="location.href='@Url.Action("Index", "Home")'"><b>Voltar</b></button>
+</div>
+<br />
+<div class="row" style="text-align:center">
 
-<h4>Usuario</h4>
+    <h4>Novo Usuario</h4>
+</div>
+
 <hr />
-<div class="row">
+<div class="row" style="background-color: rgba(0,0,0,0.5)">
     <form asp-action="Create">
         <div class="row">
             <div class="col">
-                <input type="text" class="form-control" placeholder="Nome">
+                <label asp-for="usuarioNome" class="control-label">Nome:</label>
+                <input asp-for="usuarioNome" type="text" class="form-control" placeholder="Nome">
             </div>
             <div class="col">
-                <input type="text" class="form-control" placeholder="Sobrenome">
+                <label asp-for="usuarioSobrenome" class="control-label">Sobrenome:</label>
+                <input asp-for="usuarioSobrenome" type="text" class="form-control" placeholder="Sobrenome">
             </div>
         </div>
-    </form>
-</div>
-<div>
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-action="Create">
-
-
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                <div class="form-group">
-                    <label asp-for="usuarioSobrenome" class="control-label"></label>
-                    <input asp-for="usuarioSobrenome" class="form-control" />
-                    <span asp-validation-for="usuarioSobrenome" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="usuarioDtnascimento" class="control-label"></label>
-                    <input asp-for="usuarioDtnascimento" class="form-control" />
-                    <span asp-validation-for="usuarioDtnascimento" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="usuarioTelefone" class="control-label"></label>
-                    <input asp-for="usuarioTelefone" class="form-control" />
-                    <span asp-validation-for="usuarioTelefone" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="usuarioEmail" class="control-label"></label>
-                    <input asp-for="usuarioEmail" class="form-control" />
-                    <span asp-validation-for="usuarioEmail" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="usuarioNickname" class="control-label"></label>
-                    <input asp-for="usuarioNickname" class="form-control" />
-                    <span asp-validation-for="usuarioNickname" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="usuarioPassword" class="control-label"></label>
-                    <input asp-for="usuarioPassword" class="form-control" />
-                    <span asp-validation-for="usuarioPassword" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="usuarioTipo" class="control-label"></label>
-                    <input asp-for="usuarioTipo" class="form-control" />
-                    <span asp-validation-for="usuarioTipo" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
-                </div>
-            </form>
+        <div class="row">
+            <div class="col">
+                <label asp-for="usuarioDtnascimento" class="control-label">Data de Nascimento:</label>
+                @*<input asp-for="usuarioDtnascimento" type="date" id="diaa" name="diaa">*@
+                <input asp-for="usuarioDtnascimento" type="text" class="form-control" placeholder="Data de Nascimento">
+            </div>
+            <div class="col">
+                <label asp-for="usuarioTelefone" class="control-label">Telefone:</label>
+                <input asp-for="usuarioTelefone" type="text" class="form-control" placeholder="(xx) 9 9999-9999">
+            </div>
+            <div class="col">
+                <label asp-for="usuarioNickname" class="control-label">Nome de Usuário:</label>
+                <input asp-for="usuarioNickname" type="text" class="form-control" placeholder="username">
+            </div>
         </div>
-    </div>
-
-
-    <a asp-action="Index">Back to List</a>
+        <div class="row">
+            <div class="col">
+                <label class="control-label">E-mail:</label>
+                <input type="text" class="form-control" placeholder="nome@email.com">
+            </div>
+            <div class="col">
+                <label asp-for="usuarioEmail" class="control-label">Confirmar E-mail:</label>
+                <input asp-for="usuarioEmail" type="text" class="form-control" placeholder="nome@email.com">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label class="control-label">Senha:</label>
+                <input type="text" class="form-control" placeholder="••••••••••••">
+            </div>
+            <div class="col">
+                <label asp-for="usuarioPassword" class="control-label">Repita a Senha:</label>
+                <input asp-for="usuarioPassword" type="password" class="form-control" placeholder="••••••••••••">
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <input type="submit" value="Create" class="btn btn-primary btn-lg btn-block" onclick="location.href='@Url.Action("Index", "Home")'" style="background-color: forestgreen; border-color: forestgreen" />
+            <br />
+            <br />
+        </div>
+    </form>
 </div>
 
 @section Scripts {

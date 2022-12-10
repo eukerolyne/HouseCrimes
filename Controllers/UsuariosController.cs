@@ -55,6 +55,7 @@ namespace HouseCrimes.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("usuarioId,usuarioNome,usuarioSobrenome,usuarioDtnascimento,usuarioTelefone,usuarioEmail,usuarioNickname,usuarioPassword,usuarioTipo")] Usuario usuario)
         {
+            usuario.usuarioTipo = "UsuarioComum";
             if (ModelState.IsValid)
             {
                 _context.Add(usuario);

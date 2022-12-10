@@ -3,49 +3,54 @@
 @{
     ViewData["Title"] = "Create";
 }
-
-<h1>Create</h1>
-
-<h4>Filme</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="titulo" class="control-label"></label>
-                <input asp-for="titulo" class="form-control" />
-                <span asp-validation-for="titulo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="descricao" class="control-label"></label>
-                <input asp-for="descricao" class="form-control" />
-                <span asp-validation-for="descricao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="classificacao" class="control-label"></label>
-                <input asp-for="classificacao" class="form-control" />
-                <span asp-validation-for="classificacao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="tipo" class="control-label"></label>
-                <input asp-for="tipo" class="form-control" />
-                <span asp-validation-for="tipo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="duracao" class="control-label"></label>
-                <input asp-for="duracao" class="form-control" />
-                <span asp-validation-for="duracao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+<h1 style="text-align:center">Novo Filme</h1>
+@*--------Botão de Voltar--------*@
+<div class="col-md-6">
+    <button type="button" class="btn border border-secondary" style="background-color: #CC0000; color: white;" onclick="location.href='@Url.Action("Index", "Home")'"><b>Voltar</b></button>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
+<br />
+<hr />
+<div class="row" style="background-color: rgba(0,0,0,0.5)">
+    <form asp-action="Create">
+        <div class="row">
+            <div class="col">
+                <label asp-for="titulo" class="control-label">Titulo:</label>
+                <input asp-for="titulo" type="text" class="form-control" placeholder="Titulo">
+            </div>
+            <div class="col">
+                <label class="control-label">Arquivo:</label>
+                <input type="file" name="arquivo" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label asp-for="descricao" class="control-label">Descrição:</label>
+                <input asp-for="descricao" type="text" class="form-control" placeholder="Um filme sobre...">
+            </div>
+            <div class="col">
+                <label asp-for="classificacao" class="control-label">Classificação:</label>
+                <input asp-for="classificacao" type="text" class="form-control" placeholder="18+">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label asp-for="tipo" class="control-label">Tipo:</label>
+                <input asp-for="tipo" type="text" class="form-control" placeholder="username">
+            </div>
+            <div class="col">
+                <label asp-for="duracao" class="control-label">Duração:</label>
+                <input asp-for="duracao" type="text" class="form-control" placeholder="00:00">
+            </div>
+        </div>
+       
+            <br />
+            <br />
+            <br />
+            <br />
+            <input type="submit" value="Create" class="btn btn-primary btn-lg btn-block" onclick="location.href='@Url.Action("Index", "Home")'" style="background-color: forestgreen; border-color: forestgreen" />
+            <br />
+            <br />
+    </form>
 </div>
 
 @section Scripts {

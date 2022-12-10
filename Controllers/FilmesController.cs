@@ -21,7 +21,7 @@ namespace HouseCrimes.Controllers
         // GET: Filmes
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Filme.ToListAsync());
+            return View(await _context.Filme.ToListAsync());
         }
 
         // GET: Filmes/Details/5
@@ -53,10 +53,18 @@ namespace HouseCrimes.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("filmeId,titulo,descricao,classificacao,tipo,duracao")] Filme filme)
+        public async Task<IActionResult> Create([Bind("filmeId,titulo,descricao,classificacao,tipo,duracao")] Filme filme, IFormFile arquivo)
         {
-            if (ModelState.IsValid)
+            var fileName = arquivo.FileName;
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/video/", fileName);
+            if (filme.titulo != null)
             {
+                using (var localFile = System.IO.File.OpenWrite(filePath))
+                using (var uploadedFile = arquivo.OpenReadStream())
+                {
+                    uploadedFile.CopyTo(localFile);
+                }
+
                 _context.Add(filme);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -147,14 +155,14 @@ namespace HouseCrimes.Controllers
             {
                 _context.Filme.Remove(filme);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool FilmeExists(int id)
         {
-          return _context.Filme.Any(e => e.filmeId == id);
+            return _context.Filme.Any(e => e.filmeId == id);
         }
     }
 }
