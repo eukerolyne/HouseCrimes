@@ -12,7 +12,9 @@
 <hr />
 <div class="row" style="background-color: rgba(0,0,0,0.5)">
     <form asp-action="Create">
+
         <div class="row">
+
             <div class="col">
                 <label asp-for="titulo" class="control-label">Titulo:</label>
                 <input asp-for="titulo" type="text" class="form-control" placeholder="Titulo">
@@ -21,8 +23,11 @@
                 <label class="control-label">Arquivo:</label>
                 <input type="file" name="arquivo" class="form-control" />
             </div>
+
         </div>
+
         <div class="row">
+
             <div class="col">
                 <label asp-for="descricao" class="control-label">Descrição:</label>
                 <input asp-for="descricao" type="text" class="form-control" placeholder="Um filme sobre...">
@@ -31,8 +36,11 @@
                 <label asp-for="classificacao" class="control-label">Classificação:</label>
                 <input asp-for="classificacao" type="text" class="form-control" placeholder="18+">
             </div>
+
         </div>
+
         <div class="row">
+
             <div class="col">
                 <label asp-for="tipo" class="control-label">Tipo:</label>
                 <input asp-for="tipo" type="text" class="form-control" placeholder="username">
@@ -41,18 +49,25 @@
                 <label asp-for="duracao" class="control-label">Duração:</label>
                 <input asp-for="duracao" type="text" class="form-control" placeholder="00:00">
             </div>
+
         </div>
-       
-            <br />
-            <br />
-            <br />
-            <br />
-            <input type="submit" value="Create" class="btn btn-primary btn-lg btn-block" onclick="location.href='@Url.Action("Index", "Home")'" style="background-color: forestgreen; border-color: forestgreen" />
-            <br />
-            <br />
+
+        <br />
+
     </form>
+
+    <br />
+    <br />
+    <input type="submit" value="Create" class="btn btn-primary btn-lg btn-block" onclick="location.href='@Url.Action("Index", "Home")'" style="background-color: forestgreen; border-color: forestgreen" />
+    <br />
+    <br />
+
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+
+}
 }

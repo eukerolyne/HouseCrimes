@@ -57,6 +57,7 @@ namespace HouseCrimes.Controllers
         {
             var fileName = arquivo.FileName;
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/video/", fileName);
+
             if (filme.titulo != null)
             {
                 using (var localFile = System.IO.File.OpenWrite(filePath))

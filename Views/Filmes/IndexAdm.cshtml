@@ -1,11 +1,18 @@
 ﻿@model IEnumerable<HouseCrimes.Models.Filme>
 
 @{
-    ViewData["Title"] = "House of Crimes";
+    ViewData["Title"] = "IndexAdm";
 }
 
 <h1 style="text-align: center;">Filmes</h1>
 <br />
+
+<button class="btn btn-primary"
+        type="submit"
+        onclick="location.href='@Url.Action("Index", "Home")'"
+        style="background-color: forestgreen; border-color: forestgreen">
+    Adicionar novo filme
+</button>
 
 <table class="table table-striped">
     <thead class="table-dark align-content-center">
